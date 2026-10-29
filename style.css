@@ -375,16 +375,22 @@ body {
   letter-spacing: 1.2px;
 }
 
-.contact-card h3 {
-  margin: 0;
-  overflow-wrap: anywhere;
-  color: #172b45;
-  font-family: "Manrope", sans-serif;
-  font-size: 21px;
-  line-height: 1.45;
-  font-weight: 800;
-  letter-spacing: -0.45px;
+.contact-card--owner h3 {
+    margin-bottom: 0;
 }
+
+.contact-card h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: #172b45;
+    font-family: "Manrope", sans-serif;
+    font-size: 21px;
+    line-height: 1.45;
+    font-weight: 800;
+    letter-spacing: -0.45px;
+    margin-bottom: 10px;
+}
+
 
 .contact-card__description {
   margin: 7px 0 17px;
@@ -396,7 +402,7 @@ body {
 /* Action buttons */
 
 .call-button {
-  width: 100%;
+  /* width: 100%; */
   min-height: 55px;
   justify-content: flex-start;
   gap: 12px;
@@ -404,11 +410,12 @@ body {
   border: 1px solid transparent;
   border-radius: 13px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
-  font-weight: 750;
+  font-weight: 600;
   transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   -webkit-tap-highlight-color: transparent;
+  max-width: 100%;
 }
 
 .call-button svg {
