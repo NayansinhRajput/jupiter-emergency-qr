@@ -479,16 +479,18 @@ body {
 }
 
 .vehicle-details__heading-icon {
-  width: 27px;
-  height: 27px;
-  display: grid;
-  flex-shrink: 0;
-  place-items: center;
-  border-radius: 9px;
-  background: #eaf2fc;
-  color: #245b94;
-  font-size: 20px;
-  font-weight: 700;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 9px;
+    background: #eaf2fc;
+    color: #245b94;
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
 }
 
 .vehicle-details__heading h2 {
