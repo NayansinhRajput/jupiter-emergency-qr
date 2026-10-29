@@ -5,16 +5,16 @@
   Do not publish unconfirmed medical information.
 */
 const emergencyDetails = {
-  ownerName: "Owner name will appear here",
-  ownerPhone: "",
+  ownerName: "Nayansinh G. Rajput",
+  ownerPhone: "+918141304030",
 
-  emergencyName: "Emergency contact 1 name",
-  emergencyPhone: "",
+  emergencyName: "Govindbhai R. Rajput",
+  emergencyPhone: "+919099080100",
 
-  emergencyName2: "Emergency contact 2 name",
-  emergencyPhone2: "",
+  emergencyName2: "Aniket G. Rajput",
+  emergencyPhone2: "+917874991390",
 
-  bloodGroup: "To be confirmed"
+  bloodGroup: "O+"
 };
 
 function setText(id, value, fallback) {
