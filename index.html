@@ -1,66 +1,165 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102b4e">
+  <meta name="theme-color" content="#0b1730">
   <meta name="description" content="Emergency contact information for the vehicle owner.">
-  <title>Emergency Contact</title>
+  <title>Vehicle Emergency Assistance</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="emergency-card">
+
     <header class="emergency-card__header">
-      <div class="emergency-card__symbol" aria-hidden="true">!</div>
-      <p class="emergency-card__eyebrow">VEHICLE EMERGENCY CARD</p>
-      <h1>Need help?</h1>
-      <p class="emergency-card__intro">If there is an emergency involving this vehicle, please contact the owner or emergency contact below.</p>
+      <div class="emergency-card__top">
+        <div class="emergency-card__brand">
+          <span class="emergency-card__symbol" aria-hidden="true">!</span>
+          <div>
+            <p class="emergency-card__eyebrow">VEHICLE SAFETY</p>
+            <p class="emergency-card__vehicle">TVS JUPITER 110</p>
+          </div>
+        </div>
+        <span class="emergency-card__status">
+          <span class="emergency-card__status-dot"></span>
+          Emergency info
+        </span>
+      </div>
+
+      <div class="emergency-card__hero">
+        <p class="emergency-card__kicker">HELP IS JUST A CALL AWAY</p>
+        <h1>Need help<span>?</span></h1>
+        <p class="emergency-card__intro">
+          If there is an emergency involving this vehicle,
+          please contact the owner or an emergency contact below.
+        </p>
+      </div>
+
+      <div class="emergency-card__shield" aria-hidden="true">+</div>
     </header>
 
-    <section class="contact-section" aria-labelledby="owner-heading">
-      <p class="section-label" id="owner-heading">OWNER DETAILS</p>
-      <h2 id="owner-name">Owner name will appear here</h2>
-      <p class="contact-section__note">Please call the owner first if safe to do so.</p>
-      <a class="action-button action-button--primary" id="owner-call" href="#" aria-label="Call vehicle owner">
-        <span aria-hidden="true">☎</span> Call owner
-      </a>
-    </section>
+    <div class="emergency-card__content">
 
-    
-    <section class="contact-section contact-section--emergency" aria-labelledby="emergency-heading">
-      <p class="section-label" id="emergency-heading">EMERGENCY CONTACT 1</p>
-      <p class="contact-section__name" id="emergency-name">Emergency contact 1 name</p>
-      <a class="action-button action-button--secondary" id="emergency-call" href="#" aria-label="Call emergency contact 1">
-        <span aria-hidden="true">☎</span> Call emergency contact 1
-      </a>
-    </section>
-    
-    <section class="contact-section contact-section--emergency" aria-labelledby="emergency-heading-2">
-      <p class="section-label" id="emergency-heading-2">EMERGENCY CONTACT 2</p>
-      <p class="contact-section__name" id="emergency-name-2">Emergency contact 2 name</p>
-      <a class="action-button action-button--secondary" id="emergency-call-2" href="#" aria-label="Call emergency contact 2">
-        <span aria-hidden="true">☎</span> Call emergency contact 2
-      </a>
-    </section>
+      <section class="contact-section contact-section--owner"
+        aria-labelledby="owner-heading">
+        <div class="contact-section__heading">
+          <span class="contact-section__icon" aria-hidden="true">01</span>
+          <div>
+            <p class="section-label" id="owner-heading">VEHICLE OWNER</p>
+            <p class="contact-section__caption">Primary contact</p>
+          </div>
+        </div>
 
+        <h2 id="owner-name">Owner name will appear here</h2>
+        <p class="contact-section__note">
+          Please call the owner first if safe to do so.
+        </p>
 
-    <section class="details-row" aria-label="Additional details">
-      <div class="details-row__item">
-        <span class="details-row__label">Blood group</span>
-        <strong id="blood-group">To be confirmed</strong>
+        <a class="action-button action-button--primary"
+          id="owner-call" href="#" aria-label="Call vehicle owner">
+          <span class="action-button__icon" aria-hidden="true">☎</span>
+          <span>Call owner</span>
+          <span class="action-button__arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="contact-section contact-section--emergency"
+        aria-labelledby="emergency-heading">
+        <div class="contact-section__heading">
+          <span class="contact-section__icon" aria-hidden="true">02</span>
+          <div>
+            <p class="section-label" id="emergency-heading">
+              EMERGENCY CONTACT 1
+            </p>
+            <p class="contact-section__caption">Alternate assistance</p>
+          </div>
+        </div>
+
+        <p class="contact-section__name" id="emergency-name">
+          Emergency contact 1 name
+        </p>
+
+        <a class="action-button action-button--secondary"
+          id="emergency-call" href="#" aria-label="Call emergency contact 1">
+          <span class="action-button__icon" aria-hidden="true">☎</span>
+          <span>Call emergency contact 1</span>
+          <span class="action-button__arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="contact-section contact-section--emergency"
+        aria-labelledby="emergency-heading-2">
+        <div class="contact-section__heading">
+          <span class="contact-section__icon" aria-hidden="true">03</span>
+          <div>
+            <p class="section-label" id="emergency-heading-2">
+              EMERGENCY CONTACT 2
+            </p>
+            <p class="contact-section__caption">Backup assistance</p>
+          </div>
+        </div>
+
+        <p class="contact-section__name" id="emergency-name-2">
+          Emergency contact 2 name
+        </p>
+
+        <a class="action-button action-button--secondary"
+          id="emergency-call-2" href="#"
+          aria-label="Call emergency contact 2">
+          <span class="action-button__icon" aria-hidden="true">☎</span>
+          <span>Call emergency contact 2</span>
+          <span class="action-button__arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="details-row" aria-label="Additional details">
+        <div class="details-row__item details-row__item--blood">
+          <span class="details-row__icon" aria-hidden="true">+</span>
+          <div>
+            <span class="details-row__label">Blood group</span>
+            <strong id="blood-group">To be confirmed</strong>
+          </div>
+        </div>
+
+        <div class="details-row__item details-row__item--vehicle">
+          <span class="details-row__icon" aria-hidden="true">⌁</span>
+          <div>
+            <span class="details-row__label">Vehicle</span>
+            <strong>TVS Jupiter 110</strong>
+          </div>
+        </div>
+      </section>
+
+      <a class="action-button action-button--location"
+        id="location-button" href="#" target="_blank"
+        rel="noopener noreferrer">
+        <span class="action-button__icon" aria-hidden="true">⌖</span>
+        <span>
+          <strong>Location assistance</strong>
+          <small>Open map or location-sharing option</small>
+        </span>
+        <span class="action-button__arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <div class="privacy-note">
+        <span class="privacy-note__icon" aria-hidden="true">i</span>
+        <p>
+          This page displays contact details provided by the owner.
+          It does not automatically track anyone's location.
+        </p>
       </div>
-      <div class="details-row__item">
-        <span class="details-row__label">Vehicle</span>
-        <strong>TVS Jupiter 110</strong>
-      </div>
-    </section>
 
-    <a class="action-button action-button--location" id="location-button" href="#" target="_blank" rel="noopener noreferrer">
-      Share / find location
-    </a>
-    <p class="privacy-note">This page only shows the contact details provided by the owner. The location button does not automatically track anyone; it opens a map/location-sharing option.</p>
-    <footer class="emergency-card__footer">Thank you for helping safely.</footer>
+    </div>
+
+    <footer class="emergency-card__footer">
+      <span class="emergency-card__footer-icon" aria-hidden="true">♥</span>
+      <p>Stay alert. Stay safe.</p>
+      <span class="emergency-card__footer-caption">RIDE RESPONSIBLY</span>
+    </footer>
+
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
