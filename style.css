@@ -1,5 +1,3 @@
-*The complete replacement CSS is provided below. Copy it into `style.css`.*
-
 ```css
 * {
   box-sizing: border-box;
@@ -14,464 +12,852 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 30px 16px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background:
-    radial-gradient(ellipse at 50% 0%, #dce9f8 0%, transparent 48%),
-    #f0f4f9;
+  padding: 32px 16px;
+  background: #edf2f8;
   color: #17263d;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Arial, sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-.emergency-card {
+.emergency-page {
   position: relative;
   width: 100%;
-  max-width: 490px;
+  max-width: 500px;
+  margin: 0 auto;
   overflow: hidden;
+  border: 1px solid #dfe6ef;
+  border-radius: 28px;
   background: #ffffff;
-  border: 1px solid #dfe7f1;
-  border-radius: 26px;
-  box-shadow:
-    0 28px 70px rgba(18, 39, 70, 0.12),
-    0 5px 16px rgba(18, 39, 70, 0.04);
+  box-shadow: 0 30px 85px rgba(16, 38, 67, 0.14);
 }
 
-/* Header */
+/* Hero */
 
-.emergency-card__header {
+.hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 30px 28px 32px;
+  padding: 27px 27px 25px;
+  background: linear-gradient(145deg, #183e69 0%, #102b4e 48%, #09182d 100%);
   color: #ffffff;
-  background: linear-gradient(145deg, #163c68 0%, #102b4e 48%, #0b1b34 100%);
 }
 
-.emergency-card__header::before,
-.emergency-card__header::after {
+.hero__top,
+.brand,
+.hero__status,
+.hero__vehicle,
+.hero__vehicle-icon,
+.hero__vehicle-arrow,
+.contact-card__top,
+.contact-card__icon,
+.call-button,
+.vehicle-details__heading,
+.info-tile__icon,
+.location-button,
+.location-button__icon,
+.location-button__arrow,
+.privacy-note,
+.privacy-note__icon,
+.page-footer__mark {
+  display: flex;
+  align-items: center;
+}
+
+.hero__top {
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  min-width: 0;
+  gap: 11px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.brand__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.brand__icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.brand__text {
+  display: grid;
+  gap: 2px;
+}
+
+.brand__text strong {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand__text strong span {
+  color: #80bdff;
+}
+
+.brand__text small {
+  color: #adc3df;
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.hero__status {
+  flex-shrink: 0;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e0eaf7;
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.hero__status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #5ce0a1;
+  box-shadow: 0 0 0 4px rgba(92, 224, 161, 0.12);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 365px;
+  margin-top: 42px;
+}
+
+.hero__eyebrow {
+  margin: 0 0 10px;
+  color: #93c6ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero__content h1 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: #ffffff;
+  font-size: clamp(43px, 10vw, 55px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -2.5px;
+}
+
+.hero__content h1 span {
+  color: #8fc5ff;
+}
+
+.hero__description {
+  max-width: 340px;
+  margin: 17px 0 0;
+  color: #d0dced;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero__orb {
   position: absolute;
   z-index: -1;
-  content: "";
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 50%;
+  pointer-events: none;
 }
 
-.emergency-card__header::before {
-  top: 75px;
-  right: -100px;
-  width: 290px;
-  height: 290px;
+.hero__orb--one {
+  top: 155px;
+  right: -115px;
+  width: 300px;
+  height: 300px;
 }
 
-.emergency-card__header::after {
-  top: 110px;
-  right: -65px;
+.hero__orb--two {
+  top: 195px;
+  right: -75px;
   width: 220px;
   height: 220px;
 }
 
-.emergency-card__symbol {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 23px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 29px;
-  line-height: 1;
-  font-weight: 800;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+.hero__vehicle {
+  position: relative;
+  z-index: 1;
+  gap: 13px;
+  margin-top: 29px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(8px);
 }
 
-.emergency-card__eyebrow {
-  position: relative;
-  margin: 0 0 10px;
-  color: #b9d3f3;
-  font-size: 12px;
-  line-height: 1.5;
+.hero__vehicle-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #9bcaff;
+}
+
+.hero__vehicle-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.hero__vehicle > span:nth-child(2) {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.hero__vehicle small {
+  color: #a9c0dc;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.hero__vehicle strong {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+.hero__vehicle-arrow {
+  margin-left: auto;
+  color: #9bcaff;
+  font-size: 23px;
+}
+
+/* Main content */
+
+.emergency-page__content {
+  padding: 29px 22px 23px;
+  background: #ffffff;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 3px 20px;
+}
+
+.section-heading__eyebrow {
+  margin: 0 0 4px;
+  color: #6b829e;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.7px;
 }
 
-.emergency-card__header h1 {
-  position: relative;
-  margin: 0 0 14px;
-  color: #ffffff;
-  font-size: clamp(36px, 8vw, 44px);
-  line-height: 1.12;
+.section-heading h2 {
+  margin: 0;
+  color: #142944;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  line-height: 1.35;
   font-weight: 800;
-  letter-spacing: -1.7px;
+  letter-spacing: -0.7px;
 }
 
-.emergency-card__intro {
-  position: relative;
-  max-width: 370px;
-  margin: 0;
-  color: #d0dced;
-  font-size: 16px;
-  line-height: 1.75;
-  font-weight: 400;
+.section-heading__count {
+  padding-bottom: 4px;
+  color: #8b9bb0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* Contact cards */
 
-.contact-section {
-  position: relative;
-  margin: 20px 22px 0;
-  padding: 21px;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
+.contact-card {
+  margin-top: 14px;
+  padding: 20px;
+  border: 1px solid #e0e7f0;
+  border-radius: 19px;
   background: #ffffff;
-  box-shadow: 0 3px 10px rgba(24, 43, 69, 0.025);
-  transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+  box-shadow: 0 4px 15px rgba(22, 43, 70, 0.035);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.contact-section--owner,
-.contact-section:has(#owner-name) {
-  border-color: #cbdcf0;
-  background: linear-gradient(145deg, #f3f8ff 0%, #ffffff 85%);
+.contact-card--owner {
+  border-color: #c6d9f0;
+  background: linear-gradient(145deg, #f0f6ff 0%, #ffffff 85%);
+  box-shadow: 0 7px 23px rgba(36, 81, 133, 0.065);
 }
 
-.contact-section--emergency {
-  background: #ffffff;
+.contact-card__top {
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 17px;
 }
 
-.section-label {
-  margin: 0 0 9px;
-  color: #60738c;
-  font-size: 12px;
+.contact-card__icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 13px;
+}
+
+.contact-card__icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.contact-card__icon--owner {
+  background: #dfeeff;
+  color: #1b568f;
+}
+
+.contact-card__icon--emergency {
+  background: #e7f5ec;
+  color: #177447;
+}
+
+.contact-card__badge,
+.contact-card__number {
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 10px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.contact-card__badge {
+  background: #e0edff;
+  color: #24588d;
+}
+
+.contact-card__number {
+  background: #f0f3f7;
+  color: #718197;
+}
+
+.contact-card__label {
+  margin: 0 0 5px;
+  color: #637791;
+  font-size: 11px;
   line-height: 1.5;
   font-weight: 800;
   letter-spacing: 1.2px;
 }
 
-.contact-section h2,
-.contact-section__name {
+.contact-card h3 {
   margin: 0;
   overflow-wrap: anywhere;
-  color: #142943;
+  color: #172b45;
+  font-family: "Manrope", sans-serif;
   font-size: 21px;
-  line-height: 1.4;
-  font-weight: 750;
-  letter-spacing: -0.35px;
+  line-height: 1.45;
+  font-weight: 800;
+  letter-spacing: -0.45px;
 }
 
-.contact-section__note {
-  margin: 7px 0 18px;
-  color: #687a91;
+.contact-card__description {
+  margin: 7px 0 17px;
+  color: #6c7c91;
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-/* Call buttons */
+/* Action buttons */
 
-.action-button {
-  position: relative;
+.call-button {
   width: 100%;
-  min-height: 54px;
-  padding: 15px 17px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
+  min-height: 55px;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 14px 15px;
   border: 1px solid transparent;
   border-radius: 13px;
-  text-align: center;
   text-decoration: none;
-  font-family: inherit;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.45;
   font-weight: 750;
-  overflow-wrap: anywhere;
-  cursor: pointer;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
 }
 
-.action-button:focus-visible {
-  outline: 3px solid #75adf5;
+.call-button svg {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.call-button > span:nth-child(2) {
+  min-width: 0;
+}
+
+.call-button__arrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 19px;
+  opacity: 0.8;
+}
+
+.call-button:focus-visible,
+.location-button:focus-visible {
+  outline: 3px solid #76b4ff;
   outline-offset: 4px;
 }
 
-.action-button:active {
+.call-button:active,
+.location-button:active {
   transform: scale(0.985);
 }
 
-.action-button--primary {
-  justify-content: flex-start;
-  background: #14794d;
+.call-button--primary {
+  background: #14784c;
   color: #ffffff;
-  box-shadow: 0 5px 13px rgba(20, 121, 77, 0.16);
+  box-shadow: 0 6px 15px rgba(20, 120, 76, 0.17);
 }
 
-.action-button--primary:hover {
-  background: #106640;
-  box-shadow: 0 7px 18px rgba(20, 121, 77, 0.22);
+.call-button--primary:hover {
+  background: #0f643e;
+  box-shadow: 0 8px 20px rgba(20, 120, 76, 0.23);
 }
 
-.action-button--secondary {
-  justify-content: flex-start;
-  background: #eff8f2;
-  border-color: #d2e9da;
-  color: #17633e;
+.call-button--secondary {
+  border-color: #d5eadd;
+  background: #f0f8f3;
+  color: #17643f;
 }
 
-.action-button--secondary:hover {
-  background: #e2f3e8;
-  border-color: #b9dfc7;
+.call-button--secondary:hover {
+  border-color: #b9ddc7;
+  background: #e4f4e9;
 }
 
-/* Additional information */
+/* Vehicle and blood group */
 
-.details-row {
+.vehicle-details {
+  margin-top: 29px;
+}
+
+.vehicle-details__heading {
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.vehicle-details__heading-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 9px;
+  background: #eaf2fc;
+  color: #245b94;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.vehicle-details__heading h2 {
+  margin: 0;
+  color: #1c304a;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+.vehicle-details__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 22px 22px 18px;
+  gap: 11px;
 }
 
-.details-row__item {
+.info-tile {
   min-width: 0;
-  padding: 17px 15px;
-  border: 1px solid #e0e7f0;
-  border-radius: 15px;
-  background: #f7f9fc;
+  padding: 16px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f8fafd;
 }
 
-.details-row__label {
+.info-tile__icon {
+  width: 37px;
+  height: 37px;
+  justify-content: center;
+  margin-bottom: 13px;
+  border-radius: 11px;
+}
+
+.info-tile__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.info-tile__icon--blood {
+  background: #ffebed;
+  color: #c63e4b;
+}
+
+.info-tile__icon--vehicle {
+  background: #e5efff;
+  color: #245c98;
+}
+
+.info-tile__label {
   display: block;
-  margin-bottom: 6px;
-  color: #687a91;
-  font-size: 13px;
+  margin-bottom: 5px;
+  color: #75859a;
+  font-size: 10px;
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: 0.8px;
 }
 
-.details-row__item strong {
+.info-tile strong {
   display: block;
   overflow-wrap: anywhere;
-  color: #182d47;
-  font-size: 16px;
+  color: #1a2f49;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
   line-height: 1.5;
-  font-weight: 750;
+  font-weight: 800;
 }
 
-/* Location button */
+/* Location */
 
-.action-button--location {
-  width: calc(100% - 44px);
-  min-height: 56px;
-  margin: 0 22px;
-  justify-content: center;
-  border-color: #cddff5;
+.location-button {
+  gap: 13px;
+  margin-top: 19px;
+  padding: 16px;
+  border: 1px solid #d1e1f5;
+  border-radius: 16px;
   background: #edf5ff;
   color: #174c83;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-.action-button--location:hover {
-  border-color: #b6d1f2;
-  background: #e1eeff;
+.location-button__icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 13px;
+  background: #dceaff;
 }
 
-/* Privacy information */
+.location-button__icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.location-button__text {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.location-button__text strong {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+.location-button__text small {
+  color: #637b98;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.location-button__arrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 21px;
+}
+
+.location-button:hover {
+  border-color: #b7d0ef;
+  background: #e2efff;
+}
+
+/* Privacy note */
 
 .privacy-note {
-  margin: 18px 22px 22px;
-  padding: 15px 16px;
-  border: 1px solid #e5eaf1;
-  border-radius: 14px;
-  background: #f7f9fc;
-  color: #5d6f85;
-  font-size: 13px;
-  line-height: 1.75;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 17px;
+  padding: 14px;
+  border: 1px solid #e6ebf2;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.privacy-note__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e6edf6;
+  color: #526983;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .privacy-note p {
   margin: 0;
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  color: #67788d;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 /* Footer */
 
-.emergency-card__footer {
-  padding: 19px 20px;
-  border-top: 1px solid #e9edf3;
+.page-footer {
+  padding: 22px 16px 24px;
+  border-top: 1px solid #e9eef4;
   background: #fbfcfe;
-  color: #536780;
   text-align: center;
+}
+
+.page-footer__mark {
+  width: 29px;
+  height: 29px;
+  justify-content: center;
+  margin: 0 auto 9px;
+  border-radius: 50%;
+  background: #e1f4e9;
+  color: #18784a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.page-footer p {
+  margin: 0;
+  color: #33465f;
   font-size: 14px;
   line-height: 1.6;
-  font-weight: 650;
+  font-weight: 700;
 }
 
-/* Hover effects for devices that support hover */
+.page-footer small {
+  display: block;
+  margin-top: 7px;
+  color: #93a0b1;
+  font-size: 9px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+/* Hover-enabled devices */
 
 @media (hover: hover) {
-  .contact-section:hover {
-    border-color: #d1ddeb;
-    box-shadow: 0 7px 20px rgba(24, 43, 69, 0.055);
+  .contact-card:hover {
+    border-color: #cdd9e8;
+    box-shadow: 0 9px 24px rgba(22, 43, 70, 0.065);
   }
 
-  .contact-section--owner:hover,
-  .contact-section:has(#owner-name):hover {
-    border-color: #b9d0ed;
+  .contact-card--owner:hover {
+    border-color: #b6cfea;
   }
 }
 
-/* Tablet and smaller screens */
+/* Responsive layout */
 
 @media (max-width: 520px) {
   body {
-    padding: 18px 12px;
+    padding: 14px 10px;
   }
 
-  .emergency-card {
+  .emergency-page {
     max-width: 460px;
     border-radius: 23px;
   }
 
-  .emergency-card__header {
-    padding: 27px 23px 29px;
+  .hero {
+    padding: 23px 20px 21px;
   }
 
-  .emergency-card__symbol {
-    width: 45px;
-    height: 45px;
-    margin-bottom: 21px;
+  .hero__content {
+    margin-top: 35px;
   }
 
-  .emergency-card__header h1 {
-    font-size: clamp(35px, 9vw, 42px);
+  .hero__content h1 {
+    font-size: clamp(42px, 10vw, 51px);
   }
 
-  .emergency-card__intro {
-    font-size: 15px;
+  .hero__description {
+    font-size: 14px;
   }
 
-  .contact-section {
-    margin: 17px 16px 0;
-    padding: 19px;
+  .hero__vehicle {
+    margin-top: 25px;
+    padding: 13px;
   }
 
-  .contact-section h2,
-  .contact-section__name {
+  .emergency-page__content {
+    padding: 24px 16px 19px;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+  .contact-card {
+    margin-top: 13px;
+    padding: 17px;
+    border-radius: 17px;
+  }
+
+  .contact-card h3 {
     font-size: 20px;
   }
 
-  .details-row {
-    gap: 10px;
-    margin: 19px 16px 17px;
+  .vehicle-details {
+    margin-top: 25px;
   }
 
-  .details-row__item {
-    padding: 14px 12px;
-  }
-
-  .action-button--location {
-    width: calc(100% - 32px);
-    margin: 0 16px;
-  }
-
-  .privacy-note {
-    margin: 16px 16px 19px;
-    padding: 14px;
+  .info-tile {
+    padding: 13px 11px;
   }
 }
 
-/* Compact phones */
+/* Very narrow phones */
 
 @media (max-width: 360px) {
   body {
-    padding: 10px 8px;
+    padding: 8px 6px;
   }
 
-  .emergency-card {
+  .emergency-page {
     border-radius: 19px;
   }
 
-  .emergency-card__header {
-    padding: 23px 18px 25px;
+  .hero {
+    padding: 19px 15px;
   }
 
-  .emergency-card__eyebrow {
-    font-size: 11px;
-    letter-spacing: 1.2px;
+  .hero__top {
+    align-items: flex-start;
   }
 
-  .emergency-card__header h1 {
-    font-size: 35px;
-    letter-spacing: -1.2px;
+  .brand {
+    gap: 8px;
   }
 
-  .emergency-card__intro {
+  .brand__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand__text strong {
     font-size: 14px;
   }
 
-  .contact-section {
-    margin: 14px 11px 0;
-    padding: 16px;
+  .brand__text small {
+    font-size: 8px;
+    letter-spacing: 0.7px;
   }
 
-  .section-label {
-    font-size: 11px;
+  .hero__status {
+    gap: 5px;
+    padding: 7px;
+    font-size: 9px;
   }
 
-  .contact-section h2,
-  .contact-section__name {
-    font-size: 19px;
+  .hero__content h1 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
   }
 
-  .action-button {
-    min-height: 52px;
-    padding: 13px 12px;
-    font-size: 15px;
+  .hero__description {
+    font-size: 13px;
   }
 
-  .details-row {
+  .emergency-page__content {
+    padding: 21px 12px 16px;
+  }
+
+  .contact-card {
+    padding: 14px;
+  }
+
+  .contact-card__badge,
+  .contact-card__number {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .contact-card h3 {
+    font-size: 18px;
+  }
+
+  .call-button {
     gap: 8px;
-    margin: 16px 11px;
+    padding: 12px 10px;
+    font-size: 13px;
   }
 
-  .details-row__item {
+  .vehicle-details__grid {
+    gap: 7px;
+  }
+
+  .info-tile {
+    padding: 11px 9px;
+  }
+
+  .info-tile strong {
+    font-size: 13px;
+  }
+
+  .location-button {
+    gap: 9px;
     padding: 12px 10px;
   }
 
-  .details-row__label {
-    font-size: 12px;
+  .location-button__text strong {
+    font-size: 13px;
   }
 
-  .details-row__item strong {
-    font-size: 14px;
-  }
-
-  .action-button--location {
-    width: calc(100% - 22px);
-    margin: 0 11px;
+  .location-button__text small {
+    font-size: 11px;
   }
 
   .privacy-note {
-    margin: 14px 11px 16px;
-    font-size: 12px;
+    padding: 11px;
   }
 }
 
@@ -487,7 +873,6 @@ body {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
   }
 }
 ```
