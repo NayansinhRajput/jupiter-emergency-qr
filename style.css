@@ -403,7 +403,6 @@ body {
 
 .call-button {
   /* width: 100%; */
-  min-height: 55px;
   justify-content: flex-start;
   gap: 12px;
   padding: 14px 15px;
