@@ -8,10 +8,10 @@ const emergencyDetails = {
   ownerName: "Nayansinh G. Rajput",
   ownerPhone: "+918141304030",
 
-  emergencyName: "Govindbhai R. Rajput",
+  emergencyName: "Govindsinh R. Rajput",
   emergencyPhone: "+919099080100",
 
-  emergencyName2: "Aniket G. Rajput",
+  emergencyName2: "Aniketsinh G. Rajput",
   emergencyPhone2: "+917874991390",
 
   bloodGroup: "O+"
